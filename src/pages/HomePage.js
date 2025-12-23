@@ -6,6 +6,7 @@ import { Footer } from "../components/Layout/Footer/Footer.js";
 import { WiredCard } from "wired-elements";
 import { WiredImage } from "wired-elements";
 import cardBg from "../assets/card-bg.webp";
+import "../components/Reload/Reload.js";
 
 export class HomePage extends LitElement {
 	async connectedCallback() {
@@ -101,6 +102,7 @@ export class HomePage extends LitElement {
 	}
 
 	render() {
+		const finished = this.cards.length > 0 && this.cards.every((card) => card.matched);
 		return html`
 			<div class="cloud-bg">
 				<header-page></header-page>
@@ -108,6 +110,8 @@ export class HomePage extends LitElement {
 					<section>
 						${this.cargando
 							? html` <p class="__loading">Cargando...</p> `
+							: finished
+							? html`<reload-page @reload-game=${() => this._chargeData()}></reload-page>`
 							: html` ${this.cards.map(
 									(character, index) => html`
 										<wired-card
