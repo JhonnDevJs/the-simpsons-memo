@@ -32,21 +32,30 @@ export default css`
 		text-align: center;
 		background-color: #8e81bf;
 	}
-  .container__image{
-    background-color: #284b8b;
-    padding: 10px;
-  }
-	wired-image {
-    background-color: #ffff;
+	.container__image {
+		background-color: #284b8b;
+		padding: 10px;
 	}
-  .__name_person {
-    color: #61c1f5;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  }
+	wired-image {
+		background-color: #ffff;
+	}
+	.__name_person {
+		color: #61c1f5;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 834px) {
+		section {
+			grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+		}
 		.__loading {
 			font-size: 1.5rem;
+		}
+	}
+
+	@media (max-width: 428px) {
+		section {
+			grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
 		}
 	}
 `;

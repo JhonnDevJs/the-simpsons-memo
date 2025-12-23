@@ -10,12 +10,19 @@ export default css`
 		color: #fffb00;
 		text-align: center;
 		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-		margin: 0;
 	}
 	
-  @media (max-width: 768px) {
+	@media (max-width: 834px) {
     h1 {
 			font-size: 2.5rem;
 		}
   }
+	
+	@media (max-width: 428px) {
+		h1 {
+			font-size: 1.2rem;
+			margin-bottom: 0;
+		}
+
+	}
 `;

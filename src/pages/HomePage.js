@@ -48,7 +48,11 @@ export class HomePage extends LitElement {
 	async _chargeData() {
 		this.cargando = true;
 		this.data = await getCharacters();
-		this.cards = [...this.data, ...this.data]
+
+		const limit = window.innerWidth <= 428 ? 8 : this.data.length;
+		const characters = this.data.slice(0, limit);
+
+		this.cards = [...characters, ...characters]
 			.map((character) => ({ ...character, flipped: false, matched: false }))
 			.sort(() => Math.random() - 0.5);
 		console.log(this.data);
@@ -121,7 +125,9 @@ export class HomePage extends LitElement {
 														: cardBg}"
 												></wired-image>
 											</div>
-											<p class="__name_person">${character.flipped ? character.name : "???"}</p>
+											<p class="__name_person">
+												${character.flipped ? character.name : "???"}
+											</p>
 										</wired-card>
 									`
 							  )}`}
