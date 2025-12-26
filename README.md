@@ -1,6 +1,6 @@
 # [The Simpson Memory Game]
 
-El clasico juego de memorama comvertido en un divertido mini juego web.
+El clasico juego de memorama convertido en un divertido mini juego web.
 
 ## 🚀 Acerca del Proyecto
 
